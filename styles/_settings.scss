@@ -1,0 +1,57 @@
+// ----- VARIABLES ------ //
+
+// COLORS //
+$black1:rgb(7, 7, 7);
+$black2: rgb(29, 29, 29);
+$white: rgb(246, 246, 246);
+$hellgrey: rgb(211, 211, 211);
+$middlegrey: rgb(140, 139, 139);
+$darkgrey: rgb(84, 83, 83);
+$brown: rgb(188, 132, 55);
+
+// FONTS //
+$fontA: 'Allura';
+$fontP: 'Poppins';
+$fontR: 'Roboto';
+
+
+// ----- MIXINS ------ //
+@mixin titleUp {
+  font-family: $fontA, serif;
+  color: $brown;
+}
+
+@mixin titleDown {
+    font-family: $fontP, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@mixin title-bloc {
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px 0 40px;
+    }
+
+    .up {
+        font-family: $fontA, serif;
+        color: $brown;
+        font-size: 2rem;
+        margin-bottom: -10px;
+    }
+
+    .down {
+        font-family: $fontP, sans-serif;
+        letter-spacing: 1px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .title img {
+        margin-top: 20px;
+    }
+}
