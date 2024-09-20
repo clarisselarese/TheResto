@@ -1,0 +1,104 @@
+.section-menu {
+    @include title-bloc;
+    padding: 50px 0 100px;
+    background: linear-gradient(to bottom, $black2 45%, rgba(0, 0, 0, 0) 45%),
+      url(../img/bg-menu-01.jpg) no-repeat bottom;
+    position: relative;
+    z-index: 1;
+  
+    .down {
+      color: $white;
+    }
+  
+    .menu-list {
+      width: 50%;
+      margin: 0 auto;
+      font-family: $fontR;
+      font-size: 1rem;
+      font-weight: 300;
+      color: $white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+  
+      .lunch {
+        position: relative;
+      }
+  
+      .lunch::after {
+        content: "";
+        position: absolute;
+        background: $white;
+        height: 1.5px;
+        width: 100%;
+        left: 0;
+        bottom: -4px;
+        display: block;
+      }
+  
+      span {
+        cursor: pointer;
+        position: relative;
+  
+        &:hover::after {
+          content: "";
+          position: absolute;
+          background: $white;
+          height: 1.5px;
+          width: 100%;
+          left: 0;
+          bottom: -4px;
+        }
+      }
+    }
+  
+    .menu-box {
+      background: $white;
+      border-top: 5px solid $brown;
+      width: 60%;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding: 20px 20px;
+      position: relative;
+      z-index: 2;
+  
+      .menu-item {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        margin: 0 20px;
+        align-items: center;
+        gap: 20px;
+        padding: 30px 0;
+        border-bottom: 1px dashed $hellgrey;
+  
+        img {
+          border-radius: 100px;
+          height: 75px;
+          width: 75px;
+        }
+  
+        h4 {
+          font-family: $fontR;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 0.8rem;
+        }
+  
+        .ingredients {
+          font-family: $fontR;
+          color: $darkgrey;
+          font-weight: 300;
+          font-size: 0.9rem;
+        }
+  
+        .price {
+          font-family: $fontP;
+          color: $brown;
+          font-weight: 400;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }

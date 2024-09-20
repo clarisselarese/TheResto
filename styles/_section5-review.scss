@@ -1,0 +1,56 @@
+.section-review {
+    padding-top: 40px;
+    padding-bottom: 230px;
+    background: linear-gradient(to bottom, $black2 35%, rgba(0, 0, 0, 0) 35%),
+      url(../img/gmap.jpg) no-repeat top;
+    background-size: cover;
+    position: relative;
+  
+    .img-review {
+      position: absolute;
+      border-radius: 50px;
+      width: 80px;
+      height: 80px;
+      left: 50%;
+      transform: translate(-50%);
+      top: 0;
+    }
+  
+    .review-container {
+      background: $white;
+      width: 75%;
+      margin: 0 auto;
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      span {
+        font-family: $fontP;
+        font-size: 1.5rem;
+      }
+  
+      p {
+        text-align: center;
+        font-family: $fontR;
+        font-size: 0.95rem;
+        font-weight: 300;
+        line-height: 200%;
+      }
+  
+      h3 {
+        font-family: $fontR;
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 20px 0 10px;
+      }
+  
+      h5 {
+        font-family: $fontR;
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: $brown;
+      }
+    }
+  }
