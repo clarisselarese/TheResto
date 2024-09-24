@@ -19,6 +19,7 @@
     .review-container {
       background: $white;
       width: 75%;
+      max-width: 1050px;
       margin: 0 auto;
       padding: 80px;
       display: flex;
@@ -26,17 +27,25 @@
       justify-content: center;
       align-items: center;
   
-      span {
-        font-family: $fontP;
-        font-size: 1.5rem;
-      }
   
-      p {
+      .text {
         text-align: center;
         font-family: $fontR;
         font-size: 0.95rem;
         font-weight: 300;
         line-height: 200%;
+
+        &:before {
+          content: "❝";
+        }
+
+        &:after {
+          content: "❞";
+        }
+
+        &:before, &:after {
+          font-size: 1.5rem;
+        }
       }
   
       h3 {

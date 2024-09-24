@@ -5,13 +5,19 @@
       url(../img/bg-menu-01.jpg) no-repeat bottom;
     position: relative;
     z-index: 1;
+
+    @media screen and (max-width:610px) {
+      background: linear-gradient(to bottom, $black2 60%, rgba(0, 0, 0, 0) 60%),
+      url(../img/bg-menu-01.jpg) no-repeat bottom;
+    }
   
     .down {
       color: $white;
     }
   
-    .menu-list {
+    ul {
       width: 50%;
+      min-width: 400px;
       margin: 0 auto;
       font-family: $fontR;
       font-size: 1rem;
@@ -21,6 +27,12 @@
       justify-content: space-between;
       align-items: center;
       position: relative;
+
+      @media screen and (max-width:610px) {
+        min-width: 200px;
+        width: 80%;
+        font-size: 0.8rem;
+    }
   
       .lunch {
         position: relative;
@@ -37,7 +49,7 @@
         display: block;
       }
   
-      span {
+      li {
         cursor: pointer;
         position: relative;
   
@@ -56,27 +68,33 @@
     .menu-box {
       background: $white;
       border-top: 5px solid $brown;
-      width: 60%;
+      width: 85%;
+      max-width: 800px;
       margin: 30px auto 0;
       display: grid;
       grid-template-columns: 50% 50%;
       padding: 20px 20px;
       position: relative;
       z-index: 2;
+
+      @media screen and (max-width:610px) {
+        grid-template-columns: 1fr;
+    }
   
       .menu-item {
         display: grid;
-        grid-template-columns: 20% 60% 20%;
+        grid-template-columns: 25% 60% 15%;
         margin: 0 20px;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         padding: 30px 0;
         border-bottom: 1px dashed $hellgrey;
   
         img {
           border-radius: 100px;
-          height: 75px;
-          width: 75px;
+          width: 100%;
+          align-items: center;
+          object-fit: cover;
         }
   
         h4 {
@@ -84,6 +102,7 @@
           text-transform: uppercase;
           font-weight: 400;
           font-size: 0.8rem;
+          margin-bottom: 5px;
         }
   
         .ingredients {

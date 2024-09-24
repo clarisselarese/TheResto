@@ -1,5 +1,5 @@
+@charset "UTF-8";
 header {
-  min-height: 80vh;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5))), url(../img/bg-slider-06.jpg) center/cover;
   background: linear-gradient(rgba(0, 0, 0, 0.5)), url(../img/bg-slider-06.jpg) center/cover;
 }
@@ -7,35 +7,64 @@ header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   color: rgb(246, 246, 246);
   padding-top: 16px;
+  height: 12vh;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-header nav h2 {
-  font-family: "Allura", serif;
+header nav .logo {
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 3rem;
   cursor: pointer;
   color: rgb(246, 246, 246);
+  text-align: left;
 }
-header nav .nav-items {
-  font-family: "Roboto";
+header nav ul {
+  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   text-transform: uppercase;
-  margin: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-header nav .nav-items span {
+@media screen and (max-width: 810px) {
+  header nav ul {
+    display: none;
+  }
+}
+header nav ul li {
   padding: 0 20px;
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
-header nav i {
+header nav ul li:hover {
+  color: rgb(188, 132, 55);
+}
+@media screen and (max-width: 810px) {
+  header nav .social-nav {
+    display: none;
+  }
+}
+header nav .social-nav i {
   padding: 0 5px;
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+header nav .social-nav i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 header .main-header {
   display: -webkit-box;
@@ -51,43 +80,86 @@ header .main-header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 90px;
+  height: 88vh;
 }
-header .main-header h2 {
-  font-family: "Allura", serif;
+header .main-header .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: -80px;
+}
+header .main-header .header-container h2 {
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
-  font-size: 3rem;
+  font-size: 4rem;
+  font-weight: 100;
 }
-header .main-header h1 {
-  font-family: "Poppins", sans-serif;
+@media screen and (max-width: 610px) {
+  header .main-header .header-container h2 {
+    font-size: 2.5rem;
+  }
+}
+header .main-header .header-container h1 {
+  font-family: "Poppins", sans-serif, sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
   text-transform: uppercase;
-  font-size: 3rem;
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 8px;
   color: rgb(246, 246, 246);
   margin-top: -25px;
   -webkit-filter: drop-shadow(4px 4px 8px rgb(0, 0, 0));
           filter: drop-shadow(4px 4px 8px rgb(0, 0, 0));
 }
-header .main-header img {
+@media screen and (max-width: 610px) {
+  header .main-header .header-container h1 {
+    font-size: 2rem;
+    margin-top: -20px;
+  }
+}
+header .main-header .header-container img {
   height: 40px;
   width: 40px;
-  margin: 30px 0 40px;
+  margin: 20px 0 40px;
 }
-header .main-header h3 {
-  font-family: "Roboto";
+header .main-header .header-container h3 {
+  font-family: "Roboto", sans-serif;
   color: rgb(246, 246, 246);
   letter-spacing: 5px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+}
+@media screen and (max-width: 610px) {
+  header .main-header .header-container h3 {
+    font-size: 0.7rem;
+  }
 }
 
 .section-store {
   min-height: 40vh;
   display: grid;
   grid-template-columns: 50% 50%;
+  background: rgb(246, 246, 246);
+}
+@media screen and (max-width: 610px) {
+  .section-store {
+    grid-template-columns: 1fr;
+  }
 }
 .section-store .store-left {
   border: 1px dashed rgb(188, 132, 55);
@@ -111,13 +183,13 @@ header .main-header h3 {
   margin: 30px 0 40px;
 }
 .section-store .store-left .up {
-  font-family: "Allura", serif;
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 2rem;
   margin-bottom: -10px;
 }
 .section-store .store-left .down {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
@@ -126,7 +198,7 @@ header .main-header h3 {
   margin-top: 20px;
 }
 .section-store .store-left p {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   color: rgb(29, 29, 29);
   line-height: 25px;
@@ -147,26 +219,25 @@ header .main-header h3 {
           align-items: center;
 }
 .section-store .store-left .cook h4 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-align: center;
   padding-bottom: 5px;
 }
 .section-store .store-left .cook h5 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   color: rgb(140, 139, 139);
   text-align: center;
 }
 .section-store .store-right {
-  height: 100%;
+  background: url(../img/store-01.jpg) center/cover;
 }
-.section-store .store-right img {
-  max-width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+@media screen and (max-width: 610px) {
+  .section-store .store-right {
+    display: none;
+  }
 }
 
 .section-menu {
@@ -193,13 +264,13 @@ header .main-header h3 {
   margin: 30px 0 40px;
 }
 .section-menu .up {
-  font-family: "Allura", serif;
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 2rem;
   margin-bottom: -10px;
 }
 .section-menu .down {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
@@ -207,13 +278,20 @@ header .main-header h3 {
 .section-menu .title img {
   margin-top: 20px;
 }
+@media screen and (max-width: 610px) {
+  .section-menu {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, rgb(29, 29, 29)), color-stop(60%, rgba(0, 0, 0, 0))), url(../img/bg-menu-01.jpg) no-repeat bottom;
+    background: linear-gradient(to bottom, rgb(29, 29, 29) 60%, rgba(0, 0, 0, 0) 60%), url(../img/bg-menu-01.jpg) no-repeat bottom;
+  }
+}
 .section-menu .down {
   color: rgb(246, 246, 246);
 }
-.section-menu .menu-list {
+.section-menu ul {
   width: 50%;
+  min-width: 400px;
   margin: 0 auto;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   color: rgb(246, 246, 246);
@@ -228,10 +306,17 @@ header .main-header h3 {
           align-items: center;
   position: relative;
 }
-.section-menu .menu-list .lunch {
+@media screen and (max-width: 610px) {
+  .section-menu ul {
+    min-width: 200px;
+    width: 80%;
+    font-size: 0.8rem;
+  }
+}
+.section-menu ul .lunch {
   position: relative;
 }
-.section-menu .menu-list .lunch::after {
+.section-menu ul .lunch::after {
   content: "";
   position: absolute;
   background: rgb(246, 246, 246);
@@ -241,11 +326,11 @@ header .main-header h3 {
   bottom: -4px;
   display: block;
 }
-.section-menu .menu-list span {
+.section-menu ul li {
   cursor: pointer;
   position: relative;
 }
-.section-menu .menu-list span:hover::after {
+.section-menu ul li:hover::after {
   content: "";
   position: absolute;
   background: rgb(246, 246, 246);
@@ -257,7 +342,8 @@ header .main-header h3 {
 .section-menu .menu-box {
   background: rgb(246, 246, 246);
   border-top: 5px solid rgb(188, 132, 55);
-  width: 60%;
+  width: 85%;
+  max-width: 800px;
   margin: 30px auto 0;
   display: grid;
   grid-template-columns: 50% 50%;
@@ -265,36 +351,46 @@ header .main-header h3 {
   position: relative;
   z-index: 2;
 }
+@media screen and (max-width: 610px) {
+  .section-menu .menu-box {
+    grid-template-columns: 1fr;
+  }
+}
 .section-menu .menu-box .menu-item {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 25% 60% 15%;
   margin: 0 20px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
+  gap: 10px;
   padding: 30px 0;
   border-bottom: 1px dashed rgb(211, 211, 211);
 }
 .section-menu .menu-box .menu-item img {
   border-radius: 100px;
-  height: 75px;
-  width: 75px;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .section-menu .menu-box .menu-item h4 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 0.8rem;
+  margin-bottom: 5px;
 }
 .section-menu .menu-box .menu-item .ingredients {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   color: rgb(84, 83, 83);
   font-weight: 300;
   font-size: 0.9rem;
 }
 .section-menu .menu-box .menu-item .price {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   color: rgb(188, 132, 55);
   font-weight: 400;
   font-size: 1.1rem;
@@ -307,8 +403,13 @@ header .main-header h3 {
 .section-booking .booking-container {
   display: grid;
   grid-template-columns: 35% 65%;
-  width: 75%;
+  max-width: 1050px;
   margin: 0 auto;
+}
+@media screen and (max-width: 800px) {
+  .section-booking .booking-container {
+    grid-template-columns: 1fr;
+  }
 }
 .section-booking .booking-container .container-left {
   background: rgb(7, 7, 7);
@@ -336,13 +437,13 @@ header .main-header h3 {
   margin: 30px 0 40px;
 }
 .section-booking .booking-container .container-left .booking-left .up {
-  font-family: "Allura", serif;
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 2rem;
   margin-bottom: -10px;
 }
 .section-booking .booking-container .container-left .booking-left .down {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
@@ -352,7 +453,7 @@ header .main-header h3 {
 }
 .section-booking .booking-container .container-left .booking-left h4 {
   text-align: center;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.1rem;
@@ -361,7 +462,7 @@ header .main-header h3 {
 }
 .section-booking .booking-container .container-left .booking-left p {
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -380,6 +481,7 @@ header .main-header h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 30px 0 40px;
 }
 .section-booking .booking-container .booking-right .title {
   display: -webkit-box;
@@ -398,13 +500,13 @@ header .main-header h3 {
   margin: 30px 0 40px;
 }
 .section-booking .booking-container .booking-right .up {
-  font-family: "Allura", serif;
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 2rem;
   margin-bottom: -10px;
 }
 .section-booking .booking-container .booking-right .down {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
@@ -432,7 +534,7 @@ header .main-header h3 {
   gap: 40px;
 }
 .section-booking .booking-container .booking-right form .grid-container {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -442,8 +544,14 @@ header .main-header h3 {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  width: 70%;
+  width: 50%;
+  max-width: 1050px;
   margin: 0 auto;
+}
+@media screen and (max-width: 610px) {
+  .section-booking .booking-container .booking-right form .grid-container {
+    grid-template-columns: 1fr;
+  }
 }
 .section-booking .booking-container .booking-right form .grid-container .form-item {
   display: -webkit-box;
@@ -457,7 +565,7 @@ header .main-header h3 {
 .section-booking .booking-container .booking-right form .grid-container .form-item input,
 .section-booking .booking-container .booking-right form .grid-container .form-item select {
   border: none;
-  background: transparent;
+  background: none;
   border-bottom: 1px solid rgb(211, 211, 211);
   padding: 10px 0;
   outline: none;
@@ -466,7 +574,7 @@ header .main-header h3 {
   background: rgb(29, 29, 29);
   color: rgb(246, 246, 246);
   text-transform: uppercase;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   letter-spacing: 2px;
@@ -474,6 +582,13 @@ header .main-header h3 {
   padding: 10px 25px;
   border: none;
   margin: 0 auto;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.section-booking .booking-container .booking-right form .btn:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .section-event {
@@ -510,13 +625,13 @@ header .main-header h3 {
   margin: 30px 0 40px;
 }
 .section-event .up {
-  font-family: "Allura", serif;
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 2rem;
   margin-bottom: -10px;
 }
 .section-event .down {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif, sans-serif;
   letter-spacing: 1px;
   font-weight: 600;
   text-transform: uppercase;
@@ -530,12 +645,18 @@ header .main-header h3 {
 }
 .section-event .main-box {
   width: 75%;
+  max-width: 1050px;
 }
 .section-event .main-box .grid {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 20px;
   width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .section-event .main-box .grid {
+    grid-template-columns: 1fr;
+  }
 }
 .section-event .main-box .grid .box-left {
   display: -webkit-box;
@@ -614,7 +735,7 @@ header .main-header h3 {
 .section-event .main-box .grid .box-left .box-left-1 .box-left-2-container .img-container .date-container .date .day,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-1-container .img-container .date-container .date .day,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-2-container .img-container .date-container .date .day {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -622,7 +743,7 @@ header .main-header h3 {
 .section-event .main-box .grid .box-left .box-left-1 .box-left-2-container .img-container .date-container .date .month,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-1-container .img-container .date-container .date .month,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-2-container .img-container .date-container .date .month {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   margin-top: -10px;
@@ -638,7 +759,7 @@ header .main-header h3 {
 .section-event .main-box .grid .box-left .box-left-1 .box-left-2-container .text-container h4,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-1-container .text-container h4,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-2-container .text-container h4 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1.3rem;
 }
@@ -657,7 +778,7 @@ header .main-header h3 {
       -ms-flex-align: center;
           align-items: center;
   color: rgb(140, 139, 139);
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
   padding: 20px 0;
@@ -667,7 +788,7 @@ header .main-header h3 {
 .section-event .main-box .grid .box-left .box-left-2 .box-left-1-container .text-container button,
 .section-event .main-box .grid .box-left .box-left-2 .box-left-2-container .text-container button {
   border: none;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 0.9rem;
@@ -690,6 +811,11 @@ header .main-header h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .section-event .main-box .grid .box-right {
+    min-height: 40vh;
+  }
 }
 .section-event .main-box .grid .box-right .box-right-container {
   background: rgb(246, 246, 246);
@@ -746,12 +872,12 @@ header .main-header h3 {
           align-items: center;
 }
 .section-event .main-box .grid .box-right .box-right-container .date-container .date .day {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
 }
 .section-event .main-box .grid .box-right .box-right-container .date-container .date .month {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
   font-weight: 300;
   margin-top: -10px;
@@ -773,7 +899,7 @@ header .main-header h3 {
   margin-top: 90px;
 }
 .section-event .main-box .grid .box-right .box-right-container .event-text h4 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 1.3rem;
   text-align: center;
@@ -791,14 +917,14 @@ header .main-header h3 {
   gap: 10px;
   align-items: center;
   color: rgb(140, 139, 139);
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
   padding: 20px 0;
 }
 .section-event .main-box .grid .box-right .box-right-container .event-text button {
   border: none;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 0.9rem;
@@ -829,6 +955,7 @@ header .main-header h3 {
 .section-review .review-container {
   background: rgb(246, 246, 246);
   width: 75%;
+  max-width: 1050px;
   margin: 0 auto;
   padding: 80px;
   display: -webkit-box;
@@ -845,25 +972,30 @@ header .main-header h3 {
       -ms-flex-align: center;
           align-items: center;
 }
-.section-review .review-container span {
-  font-family: "Poppins";
-  font-size: 1.5rem;
-}
-.section-review .review-container p {
+.section-review .review-container .text {
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 0.95rem;
   font-weight: 300;
   line-height: 200%;
 }
+.section-review .review-container .text:before {
+  content: "❝";
+}
+.section-review .review-container .text:after {
+  content: "❞";
+}
+.section-review .review-container .text:before, .section-review .review-container .text:after {
+  font-size: 1.5rem;
+}
 .section-review .review-container h3 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   padding: 20px 0 10px;
 }
 .section-review .review-container h5 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 300;
   color: rgb(188, 132, 55);
@@ -877,20 +1009,32 @@ footer {
   background-position: center;
   padding: 70px 0;
 }
+@media screen and (max-width: 800px) {
+  footer {
+    background: rgb(29, 29, 29);
+  }
+}
 footer .footer-container {
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 50px;
   width: 75%;
+  max-width: 1050px;
   margin: 0 auto;
 }
+@media screen and (max-width: 800px) {
+  footer .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
 footer .footer-container h2 {
-  font-family: "Allura", serif;
+  font-family: "Allura", cursive, serif;
   color: rgb(188, 132, 55);
   font-size: 2.4rem;
 }
 footer .footer-container p {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 0.9rem;
   color: rgb(211, 211, 211);
@@ -905,6 +1049,12 @@ footer .footer-container .footer-right {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 40px;
 }
 footer .footer-container .footer-right .newsletter-container {
@@ -918,7 +1068,7 @@ footer .footer-container .footer-right .newsletter-container {
   gap: 15px;
 }
 footer .footer-container .footer-right .newsletter-container label {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: rgb(211, 211, 211);
@@ -933,6 +1083,20 @@ footer .footer-container .footer-right .newsletter-container input {
   padding: 10px;
   width: 50%;
 }
+@media screen and (max-width: 800px) {
+  footer .footer-container .footer-right .newsletter-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    min-width: 75%;
+  }
+  footer .footer-container .footer-right .newsletter-container input {
+    width: 75%;
+  }
+}
 footer .footer-container .footer-right .social-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -940,7 +1104,7 @@ footer .footer-container .footer-right .social-footer {
   gap: 30px;
 }
 footer .footer-container .footer-right .social-footer h4 {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: rgb(211, 211, 211);
@@ -950,6 +1114,12 @@ footer .footer-container .footer-right .social-footer i {
   padding: 0 15px;
   color: rgb(84, 84, 84);
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+footer .footer-container .footer-right .social-footer i:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 * {

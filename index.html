@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The resto</title>
+    <title>
+      Resto, votre nouveau restaurant gastronomique avec des produits locaux et
+      bio.
+    </title>
 
     <link rel="stylesheet" href="./styles/index.css" />
 
@@ -11,6 +14,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+
+    <link rel="shortcut icon" href="./img/ic-plate.png" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
@@ -29,16 +34,16 @@
   <body>
     <header>
       <nav>
-        <h2>Resto</h2>
-        <div class="nav-items">
-          <span>Home</span>
-          <span>Reservations</span>
-          <span>Menu</span>
-          <span>Blog</span>
-          <span>Pages</span>
-          <span>Shop</span>
-          <span>Contact</span>
-        </div>
+        <div class="logo">Resto</div>
+        <ul class="nav-items">
+          <li>Home</li>
+          <li>Reservations</li>
+          <li>Menu</li>
+          <li>Blog</li>
+          <li>Pages</li>
+          <li>Shop</li>
+          <li>Contact</li>
+        </ul>
         <div class="social-nav">
           <i class="fa-brands fa-facebook-f"></i>
           <i class="fa-brands fa-twitter"></i>
@@ -47,10 +52,12 @@
       </nav>
 
       <div class="main-header">
-        <h2>Welcome to</h2>
-        <h1>The Resto</h1>
-        <img src="./img/ic-plate-big.png" alt="icone de couverts" />
-        <h3>We serve only the freshest ingredients !</h3>
+        <div class="header-container">
+          <h2>Welcome to</h2>
+          <h1>The Resto</h1>
+          <img src="./img/ic-plate-big.png" alt="icone de couverts" />
+          <h3>We serve only the freshest ingredients !</h3>
+        </div>
       </div>
     </header>
 
@@ -77,12 +84,7 @@
         </div>
       </div>
 
-      <div class="store-right">
-        <img
-          src="./img/store-01.jpg"
-          alt="Personne en train de dresser un plat"
-        />
-      </div>
+      <div class="store-right"></div>
     </section>
 
     <section class="section-menu">
@@ -91,13 +93,13 @@
         <h2 class="down">Our menu</h2>
         <img src="./img/ic-plate.png" alt="Icone couverts" />
       </div>
-      <div class="menu-list">
-        <span>Breakfast</span>
-        <span class="lunch">Lunch</span>
-        <span>Dinner</span>
-        <span>Drinks</span>
-        <span>Other</span>
-      </div>
+      <ul class="menu-list">
+        <li>Breakfast</li>
+        <li class="lunch">Lunch</li>
+        <li>Dinner</li>
+        <li>Drinks</li>
+        <li>Other</li>
+      </ul>
       <div class="menu-box">
         <div class="menu-item">
           <img src="./img/dish-item-1.jpg" alt="plat" />
@@ -218,10 +220,16 @@
                 </select>
               </div>
               <div class="form-item">
-                <input type="date" id="Date" value="2024-10-24" />
+                <input
+                  type="date"
+                  id="Date"
+                  value="2024-09-20"
+                  min="2024-09-20"
+                  max="2025-09-01"
+                />
               </div>
               <div class="form-item">
-                <input type="time" id="Time" />
+                <input type="time" id="Time" min="07:00" max="22:00" />
               </div>
               <div class="form-item">
                 <input type="text" id="Name" placeholder="Name" />
@@ -230,7 +238,7 @@
                 <input type="text" id="Phone" placeholder="Phone" />
               </div>
               <div class="form-item">
-                <input type="text" id="Email" placeholder="Email" />
+                <input type="email" id="Email" placeholder="Email" />
               </div>
             </div>
             <div class="btn-container">
@@ -328,14 +336,14 @@
     <section class="section-review">
       <img class="img-review" src="./img/avatar-02.jpg" alt="cuisinière" />
       <div class="review-container">
-        <p>
-          <span>❝ </span>Lorem ipsum dolor sit amet consectetur adipisicing
+        <div class="text">
+          Lorem ipsum dolor sit amet consectetur adipisicing
           elit. Qui fugiat ratione ipsa consectetur! Fugiat id impedit
           recusandae aliquid tempora, enim doloribus odit vitae culpa facilis
           voluptatibus repellat temporibus nemo beatae. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit.<span> ❞</span>
-        </p>
-        <h3>Russell Stephens</h3>
+          amet consectetur adipisicing elit.
+        </div>
+        <h3>Megan Harris</h3>
         <h5>CEO - HeadPassion</h5>
       </div>
     </section>

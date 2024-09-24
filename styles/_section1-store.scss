@@ -1,60 +1,63 @@
 .section-store {
+  min-height: 40vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: $white;
+
+  @media screen and (max-width: 610px) {
+    grid-template-columns: 1fr;
+  }
+
+  .store-left {
+    border: 1px dashed $brown;
+    margin: 20px;
     min-height: 40vh;
-    display: grid;
-    grid-template-columns: 50% 50%;
-  
-    .store-left {
-      border: 1px dashed $brown;
-      margin: 20px;
-      min-height: 40vh;
-  
-      @include title-bloc;
-  
-      p {
-        font-family: $fontR;
-        font-weight: 300;
-        color: $black2;
-        line-height: 25px;
-        text-align: center;
-        padding: 0 20px;
-      }
-  
-      .cook {
-        text-align: center;
-        margin: 30px 0 30px;
-  
-        .img-avatar {
-          height: 70px;
-          width: 70px;
-          border-radius: 100px;
-          margin: 0 auto;
-          align-items: center;
-        }
-  
-        h4 {
-          font-family: $fontR;
-          font-weight: 500;
-          text-align: center;
-          padding-bottom: 5px;
-        }
-  
-        h5 {
-          font-family: $fontR;
-          text-transform: uppercase;
-          font-weight: 400;
-          color: $middlegrey;
-          text-align: center;
-        }
-      }
+
+    @include title-bloc;
+
+    p {
+      font-family: $fontR;
+      font-weight: 300;
+      color: $black2;
+      line-height: 25px;
+      text-align: center;
+      padding: 0 20px;
     }
-  
-    .store-right {
-      height: 100%;
-  
-      img {
-        max-width: 100%;
-        height: 100%;
-        object-fit: cover;
+
+    .cook {
+      text-align: center;
+      margin: 30px 0 30px;
+
+      .img-avatar {
+        height: 70px;
+        width: 70px;
+        border-radius: 100px;
+        margin: 0 auto;
+        align-items: center;
+      }
+
+      h4 {
+        font-family: $fontR;
+        font-weight: 500;
+        text-align: center;
+        padding-bottom: 5px;
+      }
+
+      h5 {
+        font-family: $fontR;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $middlegrey;
+        text-align: center;
       }
     }
   }
+
+  .store-right {
+    background: url(../img/store-01.jpg) center/cover;
+
+    @media screen and (max-width: 610px) {
+      display: none;
+    }
+  }
+}

@@ -6,12 +6,22 @@ footer {
   background-position: center;
   padding: 70px 0;
 
+  @media screen and (max-width:800px) {
+    background: $black2; ;
+  }
+
   .footer-container {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 50px;
     width: 75%;
+    max-width: 1050px;
     margin: 0 auto;
+
+    @media screen and (max-width:800px) {
+      grid-template-columns: 1fr ;
+      text-align: center;
+    }
 
     h2 {
       @include titleUp;
@@ -30,13 +40,15 @@ footer {
     .footer-right {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       gap: 40px;
 
       .newsletter-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
-
+        
         label {
           font-family: $fontR;
           font-size: 1rem;
@@ -53,6 +65,16 @@ footer {
           border-radius: 4px;
           padding: 10px;
           width: 50%;
+        }
+
+        @media screen and (max-width:800px ) {
+          justify-content: center;
+          align-items: center;
+          min-width: 75%;
+
+          input {
+            width: 75%;
+          }
         }
       }
 
@@ -72,6 +94,11 @@ footer {
             padding: 0 15px;
             color: rgb(84, 84, 84);
             cursor: pointer;
+            transition: 0.2s;
+
+            &:hover {
+              transform: scale(1.2);
+            }
         }
       }
     }
