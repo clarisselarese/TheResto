@@ -40,8 +40,7 @@ footer {
     .footer-right {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      align-items: left;
       gap: 40px;
 
       .newsletter-container {
